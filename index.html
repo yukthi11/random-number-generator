@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+</head>
+<body>
+   
+    <div id="container">
+<p id="result"> 0 </p>
+<button id="randombtn"> Random Number </button>
+</div>
+<style>
+
+
+     body{
+   display:block;
+ text-align: center;
+}
+
+#container{
+    margin-top:300px;
+}
+
+#randombtn{
+    border-radius: 30px;
+    padding: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid white;
+    
+}
+
+p{
+  font-size:50px;
+}
+</style>
+
+<script>
+    const resultText= document.getElementById("result");
+const numberBtn= document.getElementById("randombtn");
+
+let randomNo =[1,2,3,4,5,6,7,8,9];
+
+const generateRandomNo = () => {
+  let randomIndex = Math.floor(Math.random()*randomNo.length);
+  return randomNo[randomIndex];
+};
+
+
+numberBtn.addEventListener("click", () => {
+  let randomNumber = generateRandomNo(); 
+  resultText.textContent = randomNumber;  
+});
+</script>
+</body>
+</html>
